@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Flip & Know 🧡</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f03f1b 10%, #42ffe0 30%, #fe22fa 70%, #eae608 100%);
+      background-size: 200% 200%;
+      animation: bgShift 8s infinite alternate;
+      color: #fff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    @keyframes bgShift {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+
+    .card-container {
+      perspective: 1000px;
+      width: 80%;
+      max-width: 400px;
+      height: 350px;
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      transition: transform 1s ease;
+      cursor: pointer;
+    }
+
+    .card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card-front img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 20px;
+      object-fit: contain;
+    }
+
+    .card-back {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 25px;
+      line-height: 1.6;
+      transform: rotateY(180deg);
+    }
+
+    #nextBtn {
+      display: none;
+      margin-top: 15px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      color: #ff9900;
+      background: #fff;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #nextBtn:hover {
+      background: #07bcbc;
+    }
+  </style>
+</head>
+<body>
+<h1> Flip & Know 🧡</h1>
+  <div class="card-container">
+
+    <div class="card active" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f2.jpg" alt="Memory 1">
+      </div>
+      <div class="card-face card-back">
+        Mujhe yha feel hua tha ki mere pass koi to hai jispar mera haq hai jiske faisle mai le sakta hu ...<br>
+        Jo mujhe apne aap par haq de sakta hai wo mere liye kitna important hai ye mai shayad hi kabhi bata paunga. 🧡 
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f1.jpg" alt="Memory 2">
+      </div>
+      <div class="card-face card-back">
+        <p>
+        Ye pehli baar tha jab mere liye kisi ne shayari likhi thi...
+        Us din feel hua ki mai tere liye kitna important hu , jo insaan mere liye shayari likh sakta hai uske liye mai kitna important hu.
+        
+        </p>
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f3.jpg" alt="Memory 3">
+      </div>
+      <div class="card-face card-back">
+       first time kisi ne mera nickname rakha tha , uss time feel hua ki mai tere liye kitna special hu jo tu mere liye nickname soch sakta hai. 🧸<br>
+       Thank you for making me feel special in your own unique ways.
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f4.jpg" alt="Memory 4">
+      </div>
+      <div class="card-face card-back">
+        Ha 😁,Romance ka to pta nhi par bromance zaroor agya hai tere life me hi nhi meri life me bhi...<br>
+        Ab mai nhi rhe sakta tere se baat kiye bina , tu meri life ka ek important hissa ban chuka hai. 🧡
+        Ab mai ek din bhi nhi soch sakta tere se bina baat kiye rahuga ...<br>
+        I Love you Budduu! 🧡 😅
+     </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">  
+        <img src="f5.jpg" alt="Memory 5">
+      </div>
+      <div class="card-face card-back">
+      Ha,😅 matlab main hi tera PowerBank nikla..
+      Teri life ki battery down thi, aur jaise hi main aayi BOOM 💣💥 full charge, overcharge, aur phir direct current mode on!
+      Ab nhi lagta meko ki teri charging kabhi low ho jaigi.
+      Bas ek baat yaad rakhna, mujhe disconnect mat karna, warna fir se “low battery” warning aajayegi 😁
+
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f6.jpg" alt="Memory 6">
+      </div>
+      <div class="card-face card-back">
+        Sach bolu toh mujhe bhi aisa hi lagta hai.
+        Har koi aata tha, thoda waqt rehta tha, fir chala jaata tha…
+        Par ab hamesha ke liye tune wo seat book karli hai chahe jo bhi aai or kuch bhi ho jai wo seat hamesha teri hi rahegi ...
+        Promise karta hu ki mai hamesha uss seat ko tere liye hi rakuga or kabhi kisi ko nhi dunga. 🧡
+
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f7.jpg" alt="Memory 7">
+      </div>
+      <div class="card-face card-back">
+       Dekh, phle to mai tere se thank you deserve nhi krta hu , or mujhe pta hai ki mai unique pice hu jo kahi nhi milega ...
+       Or tune nhi maine kuch accha kiya hoga tab Allah Taala ne mujhe tera jesa dost diya  ...
+       Par mai tujhe thank you bolna chahta hu ki tune mujhe apna dost banaya , or mere jesa dost choose kiya ...
+       Mai hamesha tera shukar guzar rahuga ki tune mujhe apna Tedduu banaya. 🧡
+       Or ha mai hamesha tere saath hu , chahe kuch bhi ho jai.
+       Aakhri saans tak tera Tedduu rahuga. 🧸
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f8.jpg" alt="Memory 8">
+      </div>
+      <div class="card-face card-back">
+      Mujhe thank you nhi cahiye mujhe bus itna promise chiye ki tu hamesha mere saath hi rahega ...<br>
+      Hamesha mera saaath dega , or kabhi mujhe akela nhi chodega ...<br>
+      Mai hamesha tera Tedduu rahuga or tu hamesha mera Budduu rahega. 🧡🧸<br>
+                               Promise .......
+
+      </div>
+    </div>
+
+    <div class="card" onclick="flipCard()">
+      <div class="card-face card-front">
+        <img src="f9.jpg" alt="Memory 9">
+      </div>
+      <div class="card-face card-back">
+        I write Thousands of reason Why I Love You , but I know one reason is enough for you to understand how much you mean to me ...
+        You are not just my best friend , you are my Budduu 🧡🧸
+        I wrote this for you from the bottom of my heart , I hope you like it ...
+      </div>
+    </div>
+
+  </div>
+
+  <button id="nextBtn" onclick="showNextCard()">Next ➜</button>
+
+  <script>
+    let currentCard = 0;
+    const cards = document.querySelectorAll('.card');
+    const nextBtn = document.getElementById('nextBtn');
+
+    function flipCard() {
+      const card = cards[currentCard];
+      card.classList.toggle('flipped');
+
+      if (card.classList.contains('flipped')) {
+        nextBtn.style.display = 'inline-block';
+      } else {
+        nextBtn.style.display = 'none';
+      }
+    }
+
+    function showNextCard() {
+      cards[currentCard].style.display = 'none';
+      nextBtn.style.display = 'none';
+      currentCard++;
+
+      if (currentCard < cards.length) {
+        cards[currentCard].style.display = 'block';
+      } else {
+        document.querySelector('.card-container').innerHTML =
+          "<h2>💖 You’ve reached the end ~ Know you know how important you are for me 🧸🧡<br> Love you Budduu! 🧡</h2>";
+
+      }
+    }
+
+    // Hide all except first
+    cards.forEach((card, index) => {
+      if (index !== 0) card.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
